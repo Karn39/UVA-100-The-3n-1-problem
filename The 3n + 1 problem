@@ -1,0 +1,67 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a, b;
+	while (cin >> a >> b)
+	{
+		int max = 0;
+		if (a > b)
+		{
+			for (int i = b; i <= a; i++)
+			{
+				int count = 1;
+				int v = i;
+				while (1)
+				{
+					if (v == 1)
+					{
+						break;
+					}
+					else if (v % 2 == 0)
+					{
+						v = v / 2;
+					}
+					else
+					{
+						v = v * 3 + 1;
+					}
+					count++;
+				}
+				if (count > max)
+				{
+					max = count;
+				}
+			}
+		}
+		else 
+		{
+			for (int i = a; i <= b; i++)
+			{
+				int count = 1;
+				int v = i;
+				while (1)
+				{
+					if (v == 1)
+					{
+						break;
+					}
+					else if (v % 2 == 0)
+					{
+						v = v / 2;
+					}
+					else
+					{
+						v = v * 3 + 1;
+					}
+					count++;
+				}
+				if (count > max)
+				{
+					max = count;
+				}
+			}
+		}
+		cout << a << " " << b << " " << max << endl;
+	}
+}
