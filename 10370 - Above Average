@@ -1,0 +1,32 @@
+#include<iostream>
+#include<vector>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	int C;
+	cin >> C;
+	while (C--)
+	{
+		int N;
+		vector<int> point;
+		cin >> N;
+		double avg=0;
+		for (int i = 0; i < N; i++)
+		{
+			int v;
+			cin >> v;
+			point.push_back(v*N);
+			avg += v;
+		}
+		int up = 0;
+		for (int i = 0; i < point.size(); i++)
+		{
+			if (point[i] > avg)
+			{
+				up++;
+			}
+		}
+		cout << fixed<<setprecision(3)<< (double)100 / N*up << "%\n";
+	}
+}
