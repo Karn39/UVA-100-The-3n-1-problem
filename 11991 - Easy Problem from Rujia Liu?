@@ -1,0 +1,43 @@
+#include<iostream>
+#include<vector>
+#include<utility>
+using namespace std;
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+	int n, m;
+	while (cin >> n >> m)
+	{
+		vector<int> buf;
+		vector<int> num(1000000, 0);
+		vector<pair<int,int> > NumPos;
+		for (int i = 0; i < n; i++)
+		{
+			int v;
+			cin >> v;
+			buf.push_back(v);
+			num[v]++;
+			NumPos.push_back(make_pair(num[v], v));
+		}
+		int k, v;
+		for (int i = 0; i < m; i++)
+		{
+			cin >> k >> v;
+			bool have = false;
+			for (int j=0;j<n;j++)
+			{
+				if (k == NumPos[j].first&&v == NumPos[j].second)
+				{
+					cout << j+1 << "\n";
+					have = true;
+					break;
+				}
+			}
+			if (!have)
+			{
+				cout << 0 << "\n";
+			}
+		}
+	}
+}
