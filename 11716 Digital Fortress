@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <vector>
+using namespace std;
+int main()
+{
+	int T;
+	cin >> T;
+	cin.ignore();
+	while (T--)
+	{		
+		string s;
+		getline(cin, s);
+		vector<vector<char> > code;
+		int length = sqrt(s.size());
+		if (pow(length ,2) == s.size())
+		{
+			for (int i = 0; i < length; i++)
+			{
+				vector<char> buf;
+				for (int j = 0+ length *i; j < length+ length *i; j++)
+				{
+					buf.push_back(s[j]);
+				}
+				code.push_back(buf);
+			}
+			for (int i = 0; i < length; i++)
+			{
+				for (int j = 0; j < length; j++)
+				{
+					cout << code[j][i];
+				}
+			}
+			cout << endl;
+		}	
+		else 
+		{
+			cout << "INVALID" << endl;
+		}
+	}
+}
+
