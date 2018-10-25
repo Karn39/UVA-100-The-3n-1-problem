@@ -1,0 +1,40 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int a;
+	cin >> a;
+	while (a--)
+	{
+		int number,v;
+		cin >> number;
+		vector<int> buf;
+		for (int i = 0; i < number; i++)
+		{
+			cin >> v;
+			buf.push_back(v);
+		}
+		int answer=0;
+		sort(buf.begin(), buf.end());
+		if (number % 2 == 0)
+		{
+			int even = (buf[number / 2] + buf[number / 2 - 1])/2;
+			for (int i = 0; i < number; i++)
+			{
+				answer += abs((even - buf[i]));
+			}
+			cout << answer << endl;
+		}
+		else
+		{
+			int odd = buf[number / 2];
+			for (int i = 0; i < number; i++)
+			{
+				answer += abs((odd - buf[i]));
+			}
+			cout << answer << endl;
+		}
+	}
+}
