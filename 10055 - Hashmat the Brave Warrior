@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main()
+{	
+	unsigned long long H, E;
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+	while (cin >> H >> E)
+	{
+		if (H > E)
+		{
+			cout << H - E << "\n";
+		}
+		else
+		{
+			cout << E - H << "\n";
+		}
+	}
+}
